@@ -33,7 +33,7 @@ namespace HW5.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.DMVRecords.Add(dmv);
+                db.DMVs.Add(dmv);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

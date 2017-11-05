@@ -9,6 +9,18 @@
     padding-right: 15px;
 }
 
+/*add padding to table*/
+th{
+    padding: 15px;
+    margin: 15px;
+}
+
+/*add padding to table*/
+td{
+    padding: 15px;
+    margin: 15px;
+}
+
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
