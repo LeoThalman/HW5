@@ -1,0 +1,2 @@
+DROP TABLE dbo.DMVs;
+GO
