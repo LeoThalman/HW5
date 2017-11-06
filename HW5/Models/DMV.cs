@@ -8,6 +8,9 @@ namespace HW5.Models
 {
     public class DMV
     {
+        /// <summary>
+        /// Database fields with required and length restrictions marked as necessary
+        /// </summary>
         [Required]
         public int ID { get; set; }
 

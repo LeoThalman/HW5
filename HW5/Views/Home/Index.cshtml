@@ -1,16 +1,17 @@
-﻿@model IEnumerable<HW5.Models.DMV>
-@{
-    ViewBag.Title = "Index";
-}
+﻿@*add model iterator to list every row in database*@
+@model IEnumerable<HW5.Models.DMV>
 
-<h2>Index</h2>
+    @*Title of page*@
+<h2>@ViewBag.Title</h2>
 
 <p>
+    @*Link to Create a new row*@
     @Html.ActionLink("Create New", "Create")
 </p>
 <table>
     <tr>
         <th>
+            @*Titles for the table columns*@
             @Html.DisplayNameFor(model => model.ID)
         </th>
         <th>
@@ -43,6 +44,7 @@
     {
         <tr>
             <td>
+                @*Data of the name field*@
                 @Html.DisplayFor(modelItem => item.ID)
             </td>
             <td>
@@ -70,6 +72,7 @@
                 @Html.DisplayFor(modelItem => item.County)
             </td>
             <td>
+                @*Link to edit the row based on ID*@
                 @Html.ActionLink("Edit", "Edit", new { id=item.ID})
             </td>
         </tr>

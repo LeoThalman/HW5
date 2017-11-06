@@ -7,6 +7,9 @@ using System.Web;
 
 namespace HW5.DAL
 {
+    /// <summary>
+    /// Class to link model file to database
+    /// </summary>
     public class DmvContext :DbContext
     {
         public DmvContext() : base("name=DmvDBContext")
