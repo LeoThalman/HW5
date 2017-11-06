@@ -26,7 +26,7 @@ namespace HW5.Models
         [Required, StringLength(64)]
         public string City { get; set; }
 
-        [Required, StringLength(2), MinLength(2)]
+        [Required, StringLength(2, ErrorMessage = "State must be in Abbv. form(i.e. OR, CA)"), MinLength(2, ErrorMessage="State must be in Abbv. form(i.e. OR, CA)")]
         public string StateAbbreviated { get; set; }
 
         [Required, Range(1, 100000, ErrorMessage = "Zipcode must be a postive number less than 6 digits")]
