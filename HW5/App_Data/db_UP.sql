@@ -9,7 +9,7 @@ CREATE TABLE dbo.DMVs
 	StateAbbreviated	NVARCHAR(2) NOT NULL, 
 	ZipCode				INT NOT NULL,
 	County				NVARCHAR(64) NOT NULL,
-	CONSTRAINT [PK_dbo.dmv] PRIMARY KEY CLUSTERED (ID ASC)
+	CONSTRAINT [PK_dbo.DMVs] PRIMARY KEY CLUSTERED (ID ASC)
 );
 
 INSERT INTO dbo.DMVs (Permit,FullName,DOB,ResidenceAddress,City,StateAbbreviated,ZipCode,County) VALUES

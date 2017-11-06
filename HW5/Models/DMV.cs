@@ -8,14 +8,31 @@ namespace HW5.Models
 {
     public class DMV
     {
+        [Required]
         public int ID { get; set; }
+
+        [Required, Range( 1, 10000000, ErrorMessage = "Permit must be a postive number less than 8 digits")]
         public int Permit { get; set; }
+
+        [Required, StringLength(192)]
         public string FullName { get; set; }
+
+        [Required]
         public DateTime DOB { get; set; }
+
+        [Required, StringLength(192)]
         public string ResidenceAddress { get; set; }
+
+        [Required, StringLength(64)]
         public string City { get; set; }
+
+        [Required, StringLength(2), MinLength(2)]
         public string StateAbbreviated { get; set; }
+
+        [Required, Range(1, 100000, ErrorMessage = "Zipcode must be a postive number less than 6 digits")]
         public int ZipCode { get; set; }
+
+        [Required, StringLength(64)]
         public string County { get; set; }
 
     }

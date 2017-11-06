@@ -10,7 +10,7 @@ namespace HW5.DAL
     public class DmvContext :DbContext
     {
         public DmvContext() : base("name=DmvDBContext")
-            {}
+        {}
 
             public virtual DbSet<DMV> DMVs { get; set; }
     }
