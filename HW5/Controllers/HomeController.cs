@@ -29,7 +29,7 @@ namespace HW5.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Permit, FullName,DOB,ResidenceAddress,City,StateAbbreviated,ZipCode,County")] DMV dmv)
+        public ActionResult Create([Bind(Include = "ID, Permit, FullName,DOB,ResidenceAddress,City,StateAbbreviated,ZipCode,County")] DMV dmv)
         {
             if (ModelState.IsValid)
             {
@@ -38,6 +38,40 @@ namespace HW5.Controllers
                 return RedirectToAction("Index");
             }
 
+            return View(dmv);
+        }
+
+        /// <summary>
+        /// Returns the data row associated with the ID passed.
+        /// If not ID was passed returns HttpBadRequest, if ID isn't part
+        /// of the table returns HttpNotFound, else allows you to edit that row
+        /// </summary>
+        /// <param name="id">ID of row to edit</param>
+        /// <returns></returns>
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            DMV dmv = db.DMVs.Find(id);
+            if (dmv == null)
+            {
+                return HttpNotFound();
+            }
+            return View(dmv);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "ID, Permit, FullName,DOB,ResidenceAddress,City,StateAbbreviated,ZipCode,County")] DMV dmv)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(dmv).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
             return View(dmv);
         }
     }
